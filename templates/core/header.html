@@ -1,0 +1,6 @@
+{% extends "~header.html" %}
+{% block logo %}
+    <a style="min-height: 80px;" href="{{ url_for_index() }}">
+        <img style="min-height: 100px;" class="header-logo" src="{{ url_for('assets.custom', filename='UKAEA.png') }}">
+    </a>
+{% endblock %}
