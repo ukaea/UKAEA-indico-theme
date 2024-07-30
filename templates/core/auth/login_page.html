@@ -25,7 +25,7 @@
                 </div>
                 <button class="i-button login-form-button" data-provider="{{ active_provider.title }}"
                         data-href="{{ url_for('auth.login_form', provider=active_provider.name) }}">
-                    {%- trans name=active_provider.title %}Login with UKAEA credentials{% endtrans -%}
+                    {%- trans name=active_provider.title %}Login with Indico Account{% endtrans -%}
                 </button>
             </div>
             {% set other_local_providers = providers|rejectattr('is_external')|reject('equalto', active_provider)|list %}
