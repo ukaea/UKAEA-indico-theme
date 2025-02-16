@@ -26,6 +26,8 @@
                         {% for provider in external_providers %}
                             <a href="{{ url_for('.login', provider=provider.name, _method='GET') }}"
                                class="i-button external-provider-{{ provider.name }}">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo" 
+                                style="height: 20px; vertical-align: middle; margin-right: 8px;">
                                {{- provider.title -}}
                             </a>
                         {% endfor %}
