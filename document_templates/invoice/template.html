@@ -1,0 +1,109 @@
+{% set personal_data = registration.personal_data %}
+{% set txn = registration.transaction %}
+{% macro calc_vat(amount) %}
+    {{ "{:.2f}".format(amount * 0.2) }}
+{% endmacro %}
+
+{% macro calc_net(amount) %}
+    {{ "{:.2f}".format(amount / 1.2) }}
+{% endmacro %}
+<aside>
+    <!-- Logo -->
+    <img src="https://indico.ukaea.uk/static/custom/files/UKAEA_black.png">
+</aside>
+<br> 
+{{ registration.personal_data.title }}
+{{ registration.personal_data.first_name }}
+{{ registration.personal_data.last_name }}
+<br>
+{{ registration.personal_data.email }}
+
+<!-- Receipt number and date -->
+<dl id="information">
+    {% set today = now_utc() %}
+    <address id="from">
+        UK Atomic Energy Authority
+        Accounts Receivable
+        Culham Campus
+        Bldg C7/1/Finance
+        Abingdon
+        OX14 3DB
+        01235 466398
+    </address>
+    <br><br>
+    <dt>Invoice Number</dt>
+    <dd>
+        {% if custom_fields.receipt_number %}
+            {{ custom_fields.receipt_number }}
+        {% else %}
+            {{ event.id }}/{{ registration.friendly_id }}
+        {% endif %}
+    </dd>
+    <dt>Invoice Date</dt>
+    <dd>{{ today | format_date }}</dd>
+    <dt>Currency</dt>
+    <dd>GBP</dd>
+    <dt>UKAEA VAT Reg no</dt>
+    <dd>GB 570 1013 91</dd>
+    <dt>Standard VAT Rate</dt>
+    <dd>20.00%</dd>
+</dl>
+<br><br>
+
+<aside id="title">
+    <div class="title">
+        <!-- Title -->
+        <h2>{{ event.title }}</h2>
+        <!-- Date(s) -->
+        Febuary 10th - 13th (Part 1) <br>
+        March 3rd - 6th (Part 2)<br>
+        <!-- Venue -->
+        {% if custom_fields.venue %}
+            {{ custom_fields.venue }}
+        {% elif event.venue_name %}
+            {{ event.venue_name }}
+        {% endif %}
+
+
+        <address id="to">
+            {% if custom_fields.address_to_override %}
+                {{ custom_fields.address_to_override }}
+                VAT Number: GB443018817
+            {% endif %}
+        </address>
+    </div>
+</aside>
+<table>
+    <thead>
+        <tr>
+            <th>Details</th>
+            <th>Net Amount</th>
+            <th>VAT</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if registration.base_price %}
+        <tr>
+            <td>Registration fee {% if custom_fields.fee_category %}({{ custom_fields.fee_category }}){% endif %}</td>
+            <td>{{ calc_net(registration.base_price) }}</td>
+            <td>{{ calc_vat(registration.base_price) }}</td>
+            <td>{{ "{:.2f}".format(registration.base_price) }}</td>
+        </tr>
+        {% endif %}
+        {% for field in registration.field_data if field.actual_price %}
+        <tr>
+            <td>{{ field.title }}{% if field.friendly_value %} ({{ field.friendly_value }}){% endif %}</td>
+            <td>{{ calc_net(field.actual_price) }}</td>
+            <td>{{ calc_vat(field.actual_price) }}</td>
+            <td>{{ "{:.2f}".format(field.actual_price) }}</td>
+        </tr>
+        {% endfor %}
+        <tr class="total">
+            <td><strong>Total Amount</strong></td>
+            <td>{{ calc_net(registration.total_price) }}</td>
+            <td>{{ calc_vat(registration.total_price) }}</td>
+            <td>{{ "{:.2f}".format(registration.total_price) }}</td>
+        </tr>
+    </tbody>
+</table>
