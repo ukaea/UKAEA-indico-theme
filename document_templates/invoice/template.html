@@ -1,7 +1,7 @@
 {% set personal_data = registration.personal_data %}
 {% set txn = registration.transaction %}
 {% macro calc_vat(amount) %}
-    {{ "{:.2f}".format(amount * 0.2) }}
+    {{ "{:.2f}".format(amount * 0.2 / 1.2) }}
 {% endmacro %}
 
 {% macro calc_net(amount) %}
