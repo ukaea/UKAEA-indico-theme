@@ -49,7 +49,7 @@
 
 @font-face {
     font-family: 'Proxima Nova';
-    src: url('../font/proximanova_blackit.otf') format('opentype');
+    src: url('../files/proximanova_blackit.otf') format('opentype');
     font-weight: 900;
     font-style: italic;
     font-display: swap;
@@ -394,7 +394,7 @@ body {
 }
 
 /* Override any existing Indico styles that might conflict */
--page .login-container {
+.ukaea-login-page .login-container {
     background: none;
     box-shadow: none;
     border: none;
