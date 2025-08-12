@@ -87,6 +87,8 @@ body {
     color: white;
     padding: 20px 0;
     border-bottom: 3px solid #0082CA;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
 }
 
 .header-content {
@@ -105,7 +107,7 @@ body {
 }
 
 .indico-logo-header {
-    height: 60px;
+    height: 35px;
     margin-bottom: 0;
 }
 
@@ -127,7 +129,7 @@ body {
 }
 
 .welcome-section {
-    text-align: left;
+    text-align: center;
     margin-bottom: 40px;
 }
 
@@ -285,14 +287,14 @@ body {
 .create-account-text {
     text-align: center;
     margin: 5px 0 20px 0;
-    color: #58585B;
+    color: #0082CA;
     font-size: 1.65rem;
     font-family: 'Proxima Nova';
     font-weight: 400;
 }
 
 .create-account-link {
-    color: #002F56;
+    color: #0082CA;
     text-decoration: none;
     font-weight: 600;
     font-family: 'Proxima Nova';
