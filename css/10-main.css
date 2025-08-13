@@ -61,6 +61,10 @@ div.page-header {
     width: 100%;
 }
 
+.home-header-logo {
+    padding: 15px 0;
+}
+
 /* Reset and base styles */
 * {
     box-sizing: border-box;
@@ -339,6 +343,11 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
+}
+
+.header-logo {
+    padding: 15px 0;
+    min-height: 100px;
 }
 
 .indico-logo {
