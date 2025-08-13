@@ -23,6 +23,9 @@
                 <!-- UKAEA Staff Login Section -->
                 <div class="login-section">
                     <h2>UKAEA Staff Login</h2>
+                    <p class="login-description">
+                        If you’re a UKAEA staff member, select this option to log in.
+                    </p>
                     {% set external_providers = providers|selectattr('is_external')|sort(attribute='title') %}
                     {% if external_providers %}
                         <div class="staff-login-container">

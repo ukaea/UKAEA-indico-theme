@@ -161,7 +161,7 @@ body {
     font-size: 2.0rem;
     text-align: left;
     color: #000000;
-    margin: 0 0 20px 0;
+    margin: 0 0 0px 0;
     font-weight: 800;
     font-family: 'Proxima Nova';
     letter-spacing: -0.5px;
@@ -189,6 +189,15 @@ body {
     font-family: 'Proxima Nova';
 }
 
+.login-description {
+    color: #58585B;
+    text-align: left;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    font-size: 1.4rem;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+}
 
 
 .external-login-section {
@@ -215,7 +224,7 @@ body {
     text-align: left;
     margin-bottom: 25px;
     line-height: 1.5;
-    font-size: 1.65rem;
+    font-size: 1.4rem;
     font-family: 'Proxima Nova';
     font-weight: 400;
 }
