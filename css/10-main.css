@@ -159,6 +159,7 @@ body {
 
 .login-section h2 {
     font-size: 2.0rem;
+    text-align: left;
     color: #000000;
     margin: 0 0 20px 0;
     font-weight: 800;
@@ -200,7 +201,8 @@ body {
 }
 
 .external-login-section h2 {
-    font-size: 1.65rem;
+    font-size: 2.0rem;
+    text-align: left;
     color: #000000;
     margin: 0 0 12px 0;
     font-weight: 800;
@@ -210,6 +212,7 @@ body {
 
 .external-description {
     color: #58585B;
+    text-align: left;
     margin-bottom: 25px;
     line-height: 1.5;
     font-size: 1.65rem;
