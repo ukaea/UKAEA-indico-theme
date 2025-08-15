@@ -1,5 +1,442 @@
+/* Proxima Nova Font Face Declarations */
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../files/proximanova_regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../files/proximanova_light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../files/proximanova_bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../files/proximanova_boldit.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../files/proximanova_extrabold.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../files/proximanova_black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../files/proximanova_blackit.otf') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
 div.page-header {
     position: relative;
     background-color: #0e0f2f;
     width: 100%;
+}
+
+.home-header-logo {
+    padding: 15px 0;
+}
+
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Proxima Nova';
+    background-color: #ffffff;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.wrapper,
+.main,
+.layout-wrapper.login-page {
+    background-color: #ffffff !important;
+}
+
+/* UKAEA Login Page Styles */
+.ukaea-login-page {
+    min-height: 100vh;
+    background-color: #ffffff;
+    font-family: 'Proxima Nova';
+}
+
+.ukaea-header {
+    background: #002F56;
+    color: white;
+    padding: 20px 0;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.ukaea-logo {
+    height: 40px;
+    margin-bottom: 8px;
+    filter: brightness(0) invert(1);
+}
+
+.indico-logo-header {
+    height: 35px;
+    margin-bottom: 0;
+}
+
+.indico-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+    color: white;
+    letter-spacing: -1px;
+    font-family: 'Proxima Nova';
+    text-transform: none;
+}
+
+.ukaea-content {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    background-color: #ffffff;
+}
+
+.welcome-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.welcome-section h1 {
+    font-size: 3rem;
+    color: #000000;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: -2px;
+    font-family: 'Proxima Nova';
+    line-height: 1.0;
+    text-transform: none;
+}
+
+.login-section {
+    background: white;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border: 1px solid #FFFFFF;
+}
+
+.login-section h2 {
+    font-size: 2.0rem;
+    text-align: left;
+    color: #000000;
+    margin: 0 0 0px 0;
+    font-weight: 800;
+    font-family: 'Proxima Nova';
+    letter-spacing: -0.5px;
+}
+
+.staff-login-container {
+    margin-top: 15px;
+}
+
+.ukaea-staff-login-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000000;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 1.65rem;
+    font-weight: 600;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    gap: 10px;
+    font-family: 'Proxima Nova';
+}
+
+.login-description {
+    color: #58585B;
+    text-align: left;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    font-size: 1.4rem;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+}
+
+
+.external-login-section {
+    background: white;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border: 1px solid #FFFFFF;
+}
+
+.external-login-section h2 {
+    font-size: 2.0rem;
+    text-align: left;
+    color: #000000;
+    margin: 0 0 12px 0;
+    font-weight: 800;
+    font-family: 'Proxima Nova';
+    letter-spacing: -0.5px;
+}
+
+.external-description {
+    color: #58585B;
+    text-align: left;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    font-size: 1.4rem;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+}
+
+.external-form-wrapper {
+    margin-bottom: 20px;
+}
+
+.external-form-wrapper input[type="text"],
+.external-form-wrapper input[type="password"] {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #A7A9AB;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+    transition: border-color 0.15s ease;
+    background-color: white;
+    color: #000000;
+    font-family: 'Proxima Nova';
+}
+
+.external-form-wrapper input[type="text"]:focus,
+.external-form-wrapper input[type="password"]:focus {
+    outline: none;
+    border-color: #0082CA;
+    box-shadow: 0 0 0 0.2rem rgba(0, 130, 202, 0.25);
+}
+
+.external-form-wrapper .forgot-password {
+    text-align: right;
+    margin-bottom: 15px;
+    margin-top: -5px;
+}
+
+.external-form-wrapper .forgot-password a {
+    color: #002F56;
+    text-decoration: none;
+    font-size: 1.65rem;
+    font-weight: 600;
+    font-family: 'Proxima Nova';
+}
+
+.external-form-wrapper .forgot-password a:hover {
+    text-decoration: underline;
+}
+
+.ukaea-continue-btn {
+    background: #002F56;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.65rem;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.15s ease;
+    font-family: 'Proxima Nova';
+    letter-spacing: 0.5px;
+}
+
+
+
+.new-user-text {
+    text-align: center;
+    margin: 20px 0 -15px 0;
+    color: #58585B;
+    font-size: 1.65rem;
+    font-family: 'Proxima Nova';
+    /* make it bold */
+    font-weight: 600;
+}
+
+.create-account-text {
+    text-align: center;
+    margin: 5px 0 20px 0;
+    color: #0082CA;
+    font-size: 1.65rem;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+}
+
+.create-account-link {
+    color: #0082CA;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Proxima Nova';
+    font-size: 1.65rem;
+}
+
+.create-account-link:hover {
+    text-decoration: underline;
+}
+
+.privacy-notice {
+    text-align: center;
+    color: #58585B;
+    font-size: 1.1rem;
+    margin: 0;
+    line-height: 1.4;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+}
+
+.privacy-link {
+    color: #0082CA;
+    text-decoration: none;
+    font-family: 'Proxima Nova';
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.privacy-link:hover {
+    text-decoration: underline;
+}
+
+.ukaea-footer {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 25px;
+    border-top: 1px solid #D1D2D4;
+}
+
+.indico-branding {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.header-logo {
+    padding: 15px 0;
+    min-height: 100px;
+}
+
+.indico-logo {
+    height: 24px;
+}
+
+.powered-by {
+    color: #58585B;
+    font-size: 0.85rem;
+    font-weight: 400;
+    font-family: 'Proxima Nova';
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: left;
+        padding: 0 20px;
+        align-items: flex-start;
+    }
+    
+    .ukaea-logo {
+        margin-bottom: 8px;
+        height: 35px;
+    }
+    
+    .indico-title {
+        font-size: 2.8rem;
+        font-weight: 700;
+    }
+    
+    .welcome-section h1 {
+        font-size: 3rem;
+        font-weight: 600;
+        text-align: left;
+    }
+    
+    .ukaea-content {
+        padding: 30px 15px;
+        max-width: 100%;
+    }
+    
+    .login-section,
+    .external-login-section {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .login-section h2,
+    .external-login-section h2 {
+        font-size: 1.7rem;
+        font-weight: 800;
+    }
+}
+
+/* Override any existing Indico styles that might conflict */
+.ukaea-login-page .login-container {
+    background: none;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ukaea-login-page .centered-column {
+    max-width: none;
+    padding: 0;
+}
+
+/* Hide default elements that we're replacing */
+.ukaea-login-page .register,
+.ukaea-login-page .link {
+    display: none;
 }
