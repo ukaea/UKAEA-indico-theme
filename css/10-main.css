@@ -74,13 +74,10 @@ div.page-header {
 
 body {
     font-family: 'Proxima Nova';
-    background-color: #ffffff;
     line-height: 1.5;
     font-weight: 400;
 }
 
-.wrapper,
-.main,
 .layout-wrapper.login-page {
     background-color: #ffffff !important;
 }
