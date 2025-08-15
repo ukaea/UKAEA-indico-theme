@@ -79,6 +79,12 @@ body {
     font-weight: 400;
 }
 
+.wrapper,
+.main,
+.layout-wrapper.login-page {
+    background-color: #ffffff !important;
+}
+
 /* UKAEA Login Page Styles */
 .ukaea-login-page {
     min-height: 100vh;
@@ -90,7 +96,6 @@ body {
     background: #002F56;
     color: white;
     padding: 20px 0;
-    border-bottom: 3px solid #0082CA;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
 }
@@ -154,7 +159,7 @@ body {
     padding: 25px;
     margin-bottom: 25px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    border: 1px solid #D1D2D4;
+    border: 1px solid #FFFFFF;
 }
 
 .login-section h2 {
@@ -206,7 +211,7 @@ body {
     padding: 25px;
     margin-bottom: 25px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    border: 1px solid #D1D2D4;
+    border: 1px solid #FFFFFF;
 }
 
 .external-login-section h2 {
