@@ -1,0 +1,88 @@
+<div class="ukaea-login-page ukaea-access-key">
+    <!-- Header Section -->
+    <div class="ukaea-header">
+        <div class="header-content">
+            <img class="ukaea-logo" src="{{ url_for('assets.custom', filename='Authority_294_DIGI_AW.png') }}" alt="UK Atomic Energy Authority">
+            <img class="indico-logo-header" src="{{ url_for('assets.custom', filename='logo_indico_white.png') }}" alt="Indico">
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="ukaea-content">
+        <div class="access-card">
+            <h1>{% trans %}Access Denied{% endtrans %}</h1>
+            <p class="access-lead">
+                {% trans %}This event is protected with an access key.{% endtrans %}
+            </p>
+            <p class="access-help">
+                {% if session.user %}
+                    {% trans %}Please enter it below.{% endtrans %}
+                {% else %}
+                    {% set link_start -%}
+                        <a href="{{ url_for_login(request.relative_url) }}"><strong>
+                    {%- endset %}
+                    {% set link_end %}</strong></a>{% endset %}
+                    {% trans -%}
+                        Please {{ link_start }}log in{{ link_end }} or enter the key below.
+                    {%- endtrans %}
+                {% endif %}
+            </p>
+
+            <form action="{{ url_for('events.key_access', event) }}" method="post" class="access-form i-has-action" id="access-key-form">
+                <input type="hidden" value="{{ session.csrf_token }}" name="csrf_token">
+                <div class="access-form-row">
+                    <label class="sr-only" for="access-key">{% trans %}Access key{% endtrans %}</label>
+                    <input id="access-key" type="password" name="access_key" placeholder="{% trans %}Access key{% endtrans %}">
+                    <button class="ukaea-continue-btn access-continue" type="submit">{% trans %}Continue{% endtrans %}</button>
+                </div>
+            </form>
+
+            <p class="access-secondary">
+                <a href="{{ url_for_index() }}">{% trans %}Go to the main page{% endtrans %}</a>
+            </p>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="ukaea-footer">
+            <div class="indico-branding">
+                <img src="{{ url_for('assets.custom', filename='indico_colour.png') }}" alt="Indico" class="indico-logo">
+                <span class="powered-by">Powered by Indico</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        'use strict';
+
+        var $form = $('#access-key-form');
+        if (!$form.length) {
+            return;
+        }
+
+        var $field = $form.find('input[name=access_key]');
+        var $button = $form.find('button[type=submit]');
+
+        $field.on('input', function() {
+            $field.removeClass('hasError');
+            if ($button && $button.qtip) {
+                $button.qtip('destroy');
+            }
+        });
+
+        $form.ajaxForm({
+            error: handleAjaxError,
+            success: function(data) {
+                if (data && data.valid) {
+                    location.reload();
+                    return;
+                }
+                $field.val('').addClass('hasError');
+                if ($button && $button.stickyTooltip) {
+                    $button.stickyTooltip('danger', $T.gettext('Invalid access key'));
+                }
+            }
+        });
+    })();
+</script>

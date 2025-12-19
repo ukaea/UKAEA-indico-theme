@@ -201,6 +201,20 @@ body {
     font-weight: 400;
 }
 
+/* Event access-key gate (WPAccessKey) */
+body[data-wp="WPAccessKey"] .header,
+body[data-wp="WPAccessKey"] .footer {
+    display: none;
+}
+
+body[data-wp="WPAccessKey"] .main {
+    padding: 0;
+}
+
+body[data-wp="WPAccessKey"] .main > div {
+    margin: 0;
+}
+
 
 .external-login-section {
     background: white;
