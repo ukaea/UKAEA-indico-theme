@@ -1,0 +1,63 @@
+<div class="ukaea-access-key">
+    <div class="access-card">
+        <h1>{% trans %}Access Denied{% endtrans %}</h1>
+        <p class="access-lead">{% trans %}You do not have permission to access this resource.{% endtrans %}</p>
+        <p class="access-help">
+            {% trans %}If you have an access password, enter it below. If you believe you should have access, try logging in first.{% endtrans %}
+        </p>
+
+        <form action="{{ url_for('events.key_access', event) }}" method="post" class="access-form i-has-action" id="access-key-form">
+            <input type="hidden" value="{{ session.csrf_token }}" name="csrf_token">
+            <div class="access-form-row">
+                <label class="sr-only" for="access-key">{% trans %}Access password{% endtrans %}</label>
+                <input id="access-key" type="password" name="access_key" placeholder="{% trans %}Access password{% endtrans %}">
+                <button class="ukaea-continue-btn access-continue" type="submit">{% trans %}Continue{% endtrans %}</button>
+            </div>
+        </form>
+
+        <p class="access-secondary">
+            {% set login_link_start -%}
+                <a href="{{ url_for_login(request.relative_url) }}">
+            {%- endset %}
+            {% set login_link_end %}</a>{% endset %}
+            {% trans -%}
+                Don’t have the password? You can {{ login_link_start }}log in here{{ login_link_end }} or contact the organiser for access.
+            {%- endtrans %}
+        </p>
+    </div>
+</div>
+
+<script>
+    (function() {
+        'use strict';
+
+        var $form = $('#access-key-form');
+        if (!$form.length) {
+            return;
+        }
+
+        var $field = $form.find('input[name=access_key]');
+        var $button = $form.find('button[type=submit]');
+
+        $field.on('input', function() {
+            $field.removeClass('hasError');
+            if ($button && $button.qtip) {
+                $button.qtip('destroy');
+            }
+        });
+
+        $form.ajaxForm({
+            error: handleAjaxError,
+            success: function(data) {
+                if (data && data.valid) {
+                    location.reload();
+                    return;
+                }
+                $field.val('').addClass('hasError');
+                if ($button && $button.stickyTooltip) {
+                    $button.stickyTooltip('danger', $T.gettext('Invalid access key'));
+                }
+            }
+        });
+    })();
+</script>
