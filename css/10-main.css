@@ -55,6 +55,10 @@
     font-display: swap;
 }
 
+:root {
+    --ukaea-font-family: 'Proxima Nova', Arial, sans-serif;
+}
+
 div.page-header {
     position: relative;
     background-color: #0e0f2f;
@@ -73,9 +77,50 @@ div.page-header {
 }
 
 body {
-    font-family: 'Proxima Nova';
+    font-family: var(--ukaea-font-family);
     line-height: 1.5;
     font-weight: 400;
+}
+
+/*
+ * Indico assigns different fonts to headings, forms and descriptive boxes.
+ * Override text-bearing components without changing icon or monospace fonts.
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.i-form,
+.i-box-title,
+.i-box-description,
+.form-field-description,
+.ui.form,
+.ui.button,
+.ui.dropdown,
+.ui.menu,
+.ui.message,
+.ui.modal,
+.ui.popup,
+.ui.label,
+.ui.table {
+    font-family: var(--ukaea-font-family);
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: var(--ukaea-font-family);
+}
+
+/* Semantic UI uses higher-specificity font rules for form controls. */
+.ui.form input,
+.ui.form select,
+.ui.form textarea,
+.ui.input input {
+    font-family: var(--ukaea-font-family) !important;
 }
 
 .layout-wrapper.login-page {
